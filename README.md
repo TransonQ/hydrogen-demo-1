@@ -83,3 +83,5 @@ module.exports = {
 1. [将您的 Hydrogen 应用连接到店面并使用 Storefront API 获取数据](https://shopify.dev/api/storefront)
 2. GraphQL [Shopify Storefront API GraphiQL explorer.](https://shopify.dev/custom-storefronts/tools/graphiql-storefront-api)
 3. [useShopQuery](https://shopify.dev/api/hydrogen/hooks/global/useshopquery)
+4. [关于 Suspense](https://reactjs.org/docs/react-api.html#reactsuspense)
+5. [更多 react 服务端组件和并发特性 (React Conf 2021 ) ](https://reactjs.org/blog/2021/12/17/react-conf-2021-recap.html)
