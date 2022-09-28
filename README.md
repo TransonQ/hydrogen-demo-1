@@ -85,3 +85,8 @@ module.exports = {
 3. [useShopQuery](https://shopify.dev/api/hydrogen/hooks/global/useshopquery)
 4. [关于 Suspense](https://reactjs.org/docs/react-api.html#reactsuspense)
 5. [更多 react 服务端组件和并发特性 (React Conf 2021 ) ](https://reactjs.org/blog/2021/12/17/react-conf-2021-recap.html)
+
+<strong>踩坑...</strong>
+
+- [Hydrogen Framework Error: Something's Wrong Here...](https://community.shopify.com/c/shopify-discussions/hydrogen-framework-error-something-s-wrong-here/m-p/1700374#M309077)
+- [issue-2090](https://github.com/Shopify/hydrogen/issues/2090)
