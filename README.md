@@ -1,37 +1,85 @@
-# JavaScript Example
+# hydrogen
 
-Hydrogen is a React framework and SDK that you can use to build fast and dynamic Shopify custom storefronts.
+[toc]
 
-[Check out the docs](https://shopify.dev/custom-storefronts/hydrogen)
+## 创建项目
 
-[Run this template in JavaScript on StackBlitz](https://stackblitz.com/github/Shopify/hydrogen/tree/dist/templates/hello-world-js?file=package.json)
-
-[Run this template in TypeScript on StackBlitz](https://stackblitz.com/github/Shopify/hydrogen/tree/dist/templates/hello-world-js?file=package.json)
-
-## Getting started
-
-**Requirements:**
-
-- Node.js version 16.14.0 or higher
-- Yarn
+### 第一步
 
 ```bash
-npm init @shopify/hydrogen@latest --template hello-world-ts
+npm init @shopify/hydrogen -- --template hello-world
 ```
 
-Remember to update `hydrogen.config.js` with your shop's domain and Storefront API token!
+根据提示完成创建项目文件夹
 
-## Building for production
+### 第二步
 
-```bash
-yarn build
+```
+npm run dev
 ```
 
-## Previewing a production build
+打开 `http://localhost:3000/` ( 如果 3000 端口被占用, 端口号将会在 3000 的基础上依次递增 )
 
-To run a local preview of your Hydrogen app in an environment similar to Oxygen, build your Hydrogen app and then run `yarn preview`:
+### 第三步
 
-```bash
-yarn build
-yarn preview
+了解一下项目文件结构
+
 ```
+├── public
+    └── .gitkeep // Allows Git to recognize an empty directory
+├── src
+    └── assets
+    │   └── favicon.svg
+    ├── routes
+    │   ├── index.server.jsx  // 首页的服务端组件 `sever component`
+    ├── App.server.jsx  // 应用根组件
+    ├── index.css
+├── hydrogen.config.js  // Hydroge配置文件
+├── index.html   // html 模板
+├── jsconfig.json
+├── package.json
+├── README.md
+├── vite.config.js  // 基于 vite 的项目
+```
+
+### 第四步
+
+尝试在`Home`组件更改一下文案,体验一下 vite 基于 ESM 的热更新
+
+### 添加 tailwindcss
+
+```
+npm install -D tailwindcss @tailwindcss/typography postcss autoprefixer
+```
+
+```
+npx tailwindcss init -p
+```
+
+`tailwind.config.js`
+
+```js
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [require("@tailwindcss/typography")],
+}
+```
+
+`/src/index.css`
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+<b>重启服务</b>
+
+## 请求数据
+
+1. [将您的 Hydrogen 应用连接到店面并使用 Storefront API 获取数据](https://shopify.dev/api/storefront)
+2. GraphQL [Shopify Storefront API GraphiQL explorer.](https://shopify.dev/custom-storefronts/tools/graphiql-storefront-api)
+3. [useShopQuery](https://shopify.dev/api/hydrogen/hooks/global/useshopquery)
